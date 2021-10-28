@@ -1,0 +1,192 @@
+.chatWrapper {
+  background: #20212a;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .messagesContainer {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    .hidden {
+      display: none;
+    }
+
+    .modal {
+      background: #27282f;
+      border: 2px solid #333;
+      width: 500px;
+      height: 600px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .closeModalButton {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        padding: 10px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        color: #fff;
+        transition: 300ms all;
+
+        &:hover {
+          background: #dc3545;
+        }
+      }
+
+      .textBox {
+        padding: 50px 0px;
+        p {
+          color: #ccc;
+          font-size: 1.6rem;
+        }
+      }
+      
+      .boardButtons, .listButtons {
+        .buttons {
+          button {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 300px;
+            padding: 15px 0px;
+            font-size: 1rem;
+            border: 2px solid #2f4a4a;
+            background: transparent;
+            color: #ccc;
+            cursor: pointer;
+            transition: 300ms all;
+            font-weight: bold;
+  
+            svg {
+              margin-right: 10px;
+            }
+  
+            &:hover {
+              filter: brightness(0.9);
+              background: #2f4a4a;
+            }
+          }
+        }
+      }
+
+    }
+      
+    .messageSent, .messageReceived {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 20px;
+      cursor: pointer;
+
+      .messageText {
+        background: #27282f;
+        border: 2px solid #333;
+        width: fit-content;
+        padding: 15px 30px;
+        border-radius: 5px;
+        margin-left: 20px;
+        max-width: 500px;
+        transition: 300ms all;
+
+        p {
+          font-size: 1.2rem;
+          color: #ccc;
+          word-break: break-word;
+          margin-bottom: 10px;
+        }
+
+        span {
+          font-size: 0.8rem;
+          color: #999;
+          text-transform: uppercase;
+        }
+      }
+
+      .userImage {
+        width: 40px; 
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid #27282f; 
+      }
+    }
+
+    .messageReceived {
+      flex-direction: row-reverse;
+      align-self: flex-start;
+
+      &:hover {
+        .messageText {
+          border-color: #555;
+        }
+      }
+    }
+      
+    .messageSent {
+      align-self: flex-end;
+
+      &:hover {
+        .messageText {
+          border-color: #416666;
+        }
+      }
+
+      .messageText {
+        border-color: #2f4a4a;
+        margin-left: 0px;
+        margin-right: 20px;
+      }
+    }
+
+  }
+
+  .inputContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 30px;
+    
+    .messageInput {
+      flex: 1;
+      padding: 15px 30px;
+      font-size: 1rem;
+      background: #27282f;
+      border: 2px solid #333;
+      color: #ccc;
+      outline: 0;
+    }
+
+    .sendMessageButton {
+      margin-left: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 30px;
+      font-size: 1rem;
+      border: 1px solid #2f4a4a;
+      background: #2f4a4a;
+      color: #ccc;
+      cursor: pointer;
+      transition: 300ms all;
+      font-weight: bold;
+
+      svg {
+        margin-right: 10px;
+      }
+
+      &:hover {
+        filter: brightness(0.9);
+      }
+    }
+  }
+}
