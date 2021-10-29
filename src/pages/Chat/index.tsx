@@ -146,7 +146,7 @@ export const Chat = () => {
                 <p>{msg.message}</p>
                 <span>{msg.from}</span>
               </div>
-              <img className={styles.userImage} src="https://github.com/lliuti.png" alt="Profile picture" />
+              <img className={styles.userImage} src={`https://github.com/${msg.from}.png`} alt="Profile picture" />
             </div>
           )
         })}
