@@ -9,6 +9,7 @@ import { ChatHeader } from "../../components/ChatHeader";
 import { IMessage } from "../../interfaces/IMessage";
 import { IBoard } from "../../interfaces/IBoard";
 import { IList } from "../../interfaces/IList";
+import { ICardCreationResponse } from "../../interfaces/ICardCreationResponse";
 
 interface ILocationSearch {
   room?: string;
@@ -96,7 +97,9 @@ export const Chat = () => {
     }
 
     const cardDetails = { name: cardTitle, desc: `Created via Trello-Chat by: ${username}`, pos: "top", idList: list.id };
-    await api.post("/cards", cardDetails);
+    const response = await api.post<ICardCreationResponse>("/cards", cardDetails);
+
+    setMessage(`Card "${response.data.name}" created at: ${response.data.shortUrl}`);
 
     handleCloseModal();
   }
